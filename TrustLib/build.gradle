@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+/*开源项目用到*/
+apply plugin: 'com.github.dcendents.android-maven'
+/*开源项目用到*/
+group='com.github.istaru'
+
+android {
+    compileSdkVersion 26
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    /*网络请求*/
+    compile 'io.reactivex.rxjava2:rxjava:2.1.8'//rxjava2
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'//rxandroid
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'//配合Rxjava 使用
+    compile 'com.squareup.retrofit2:retrofit:2.4.0'//retrofit2
+    compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'//日志拦截器
+    compile 'org.ligboy.retrofit2:converter-fastjson-android:2.1.0'//JSON解析器
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'//ConverterFactory的Gson:
+    compile 'com.google.code.gson:gson:2.8.2'//gson解析
+    /*刷新加载*/
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-5'
+    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-5'//没有使用特殊Header，可以不加这行
+}

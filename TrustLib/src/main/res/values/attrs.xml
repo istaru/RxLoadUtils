@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="styleLoadingLayout" format="reference" />
+
+    <declare-styleable name="LoadingLayout">
+        <!-- 空布局资源id -->
+        <attr name="llEmptyResId" format="reference" />
+        <!-- 加载中布局资源id -->
+        <attr name="llLoadingResId" format="reference" />
+        <!-- 错误布局资源id -->
+        <attr name="llErrorResId" format="reference" />
+    </declare-styleable>
+
+    <style name="LoadingLayout" />
+
+    <style name="LoadingLayout.Style">
+        <item name="llEmptyResId">@layout/view_empty</item>
+        <item name="llLoadingResId">@layout/view_loading</item>
+        <item name="llErrorResId">@layout/view_error</item>
+    </style>
+</resources>
